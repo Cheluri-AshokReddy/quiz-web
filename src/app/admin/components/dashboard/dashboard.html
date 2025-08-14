@@ -1,0 +1,19 @@
+<!-- src/app/admin/components/dashboard/dashboard.html -->
+<div class="main">
+    <div class="row">
+      @for (test of tests; track $index) {
+        <div class="card test">
+          <h3 class="card-title">{{ test.title }}</h3>
+  
+          <p><strong>Time:</strong> {{ getFormattedTime(test.time) }}</p>
+          <p><strong>Description:</strong> {{ test.description }}</p>
+  
+          <div class="actions">
+            <button type="button" class="btn" [routerLink]="['/admin/view-test', test.id]">View Test</button>
+            <button type="button" class="btn" [routerLink]="['/admin/add-question', test.id]">Add Question</button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  
